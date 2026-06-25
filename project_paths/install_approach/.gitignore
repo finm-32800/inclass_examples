@@ -1,0 +1,21 @@
+# Generated directories
+_data/*
+!_data/.gitkeep
+_output/*
+!_output/.gitkeep
+
+# Environment
+.venv/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# PyDoit
+.doit.db
+.doit.db.db
