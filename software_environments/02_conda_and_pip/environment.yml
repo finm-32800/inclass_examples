@@ -1,0 +1,22 @@
+# conda + pip: conda provides ONLY the Python interpreter (and pip).
+# The actual project dependencies are installed by pip from
+# requirements.txt. This is the workflow recommended in the textbook:
+# a blank conda env for isolation + Python version control, then
+# `pip install -r requirements.txt` for fast package installs.
+#
+#   conda env create -f environment.yml
+#   conda activate finm-env-conda-pip
+#   pip install -r requirements.txt
+#   python analyze.py
+#
+# You could fold the pip step into this file with a `- pip:` block
+# (shown commented below), but keeping requirements.txt separate also
+# plays nicely with GitHub Actions and pip-only contributors.
+name: finm-env-conda-pip
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  # - pip:
+  #   - -r requirements.txt

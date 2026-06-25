@@ -1,0 +1,23 @@
+# uv: a single, fast Rust tool that manages the Python interpreter, a
+# virtual environment, and dependencies — all from this pyproject.toml.
+#
+#   uv run analyze.py
+#
+# That one command will, on first run: download Python 3.12 if needed,
+# create a .venv, resolve + install the dependencies below into it, and
+# then run the script. A uv.lock file is written for exact reproducibility.
+#
+# Other handy commands:
+#   uv sync            # just create/update the environment
+#   uv add scipy       # add a dependency (updates pyproject + lock)
+#   uv run python      # drop into the project's interpreter
+[project]
+name = "finm-env-uv"
+version = "0.1.0"
+description = "Moving-average crossover demo, managed by uv"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+]

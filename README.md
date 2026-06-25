@@ -14,6 +14,7 @@ These examples are designed to illustrate specific concepts during lectures with
 | [project_paths/](project_paths/) | Approaches for project-root-anchored paths |
 | [polars/](polars/) | Polars vs pandas: syntax, LazyFrames, streaming, Hive partitioning |
 | [pydoit/](pydoit/) | Progressive examples teaching PyDoit task automation |
+| [software_environments/](software_environments/) | Same app, four ways: conda, conda+pip, uv, pixi |
 | [sphinx/](sphinx/) | Sphinx documentation: quickstart, autodoc2, MyST, and themes |
 
 ## Course Overview

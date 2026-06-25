@@ -1,0 +1,16 @@
+# conda-ONLY: every dependency, including Python itself, comes from a
+# conda channel (conda-forge). No pip involved. This is the "purest"
+# conda workflow.
+#
+#   conda env create -f environment.yml
+#   conda activate finm-env-conda
+#   python analyze.py
+#
+name: finm-env-conda
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy>=2.0
+  - pandas>=2.2
+  - matplotlib>=3.9
