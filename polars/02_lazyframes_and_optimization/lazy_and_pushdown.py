@@ -104,6 +104,15 @@ if __name__ == "__main__":
     else:
         print(f"  Using existing {PARQUET_PATH}")
         df = pl.read_parquet(PARQUET_PATH)
+        type(df)
+
+        df = pl.scan_parquet(PARQUET_PATH)
+        type(df)
+        df
+        dff = df.filter(pl.col("sector") == "Technology")
+        dff
+        dff.collect()
+        df.collect()
 
     print(f"  Shape: {df.shape}  |  Columns: {df.columns[:6]} ... ({len(df.columns)} total)")
 

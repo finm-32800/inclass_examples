@@ -116,7 +116,8 @@ if __name__ == "__main__":
 
     sub("polars: compound filters are clean")
     result = plf.filter(
-        (pl.col("return_pct") > 0) & (pl.col("sector") == "Technology")
+        (pl.col("return_pct") > 0) & 
+        (pl.col("sector") == "Technology")
     )
     print(f"  {result.height} positive-return Technology rows")
 
