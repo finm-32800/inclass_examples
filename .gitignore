@@ -29,3 +29,10 @@
 # Script output directories
 **/output/
 sphinx/01_quickstart/_build/
+
+# doit build artifacts (executed notebooks, HTML, pulled data)
+_output/
+_data/
+
+# Intermediate notebooks generated from jupytext .py sources
+wrds/*.ipynb

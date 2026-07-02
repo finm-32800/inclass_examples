@@ -2,19 +2,20 @@
 
 Mirrors the ``from settings import config`` pattern used across the course
 repos, trimmed to what this example needs. ``WRDS_USERNAME`` is read from the
-repo-root ``.env``; the output/data directories fall back to local defaults so
-the notebook runs without extra configuration.
+repo-root ``.env``; the output/data directories fall back to the repo-root
+``_output``/``_data`` defaults (matching the master ``dodo.py``) so the
+notebook runs without extra configuration.
 """
 
 from pathlib import Path
 
 from decouple import config as _config
 
-_HERE = Path(__file__).resolve().parent
+_REPO_ROOT = Path(__file__).resolve().parents[1]
 
 _DEFAULTS = {
-    "OUTPUT_DIR": str(_HERE / "_output"),
-    "DATA_DIR": str(_HERE / "_data"),
+    "OUTPUT_DIR": str(_REPO_ROOT / "_output"),
+    "DATA_DIR": str(_REPO_ROOT / "_data"),
 }
 
 
