@@ -13,6 +13,7 @@ Guided exploration of the WRDS LSEG Datastream Futures library (`tr_ds_fut`). Th
 | `05_pull_prices.py` | Fetch settlement prices (complete retrieval workflow) |
 | `06_term_structure.py` | Compare term structures: commodity vs. Treasury futures |
 | `07_pull_commodities_and_treasuries.py` | Reference: pull 21 commodities + 4 Treasury futures |
+| `08_corn_futures.py` | Case study: Corn — front-month series, summary stats, and a price + term-structure plot saved to `_output/` |
 
 Run them in order — each builds on what the previous one reveals.
 
@@ -60,6 +61,7 @@ contrcode (product type, e.g. Gold = 2020)
    python 05_pull_prices.py
    python 06_term_structure.py
    python 07_pull_commodities_and_treasuries.py
+   python 08_corn_futures.py
    ```
 
    You will be prompted for your WRDS password on first connection (it gets cached via `.pgpass`).
