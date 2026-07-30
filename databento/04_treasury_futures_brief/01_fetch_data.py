@@ -36,8 +36,20 @@ END = "2025-01-01"
 # END = datetime.now().strftime("%Y-%m-%d")
 # START = (datetime.now() - timedelta(days=180)).strftime("%Y-%m-%d")
 
-# Continuous front-month symbols for daily OHLCV
-OHLCV_SYMBOLS = ["ZT.c.0", "ZF.c.0", "ZN.c.0", "TN.c.0", "ZB.c.0"]
+# Continuous front-month symbols for daily OHLCV.
+#
+# We use ".v.0" (roll by VOLUME), not ".c.0" (roll by CALENDAR). The distinction
+# matters a lot for Treasury futures:
+#
+#   .c.0  rolls only when the front contract expires. ZT and ZF stay listed
+#         through the end of their delivery month, so .c.0 keeps pointing at a
+#         contract that everyone has already rolled out of — daily volume
+#         collapses to double digits for weeks at a time.
+#   .v.0  rolls when volume migrates to the next expiration, which is what
+#         a market brief actually wants.
+#
+# Try switching to ".c.0" and re-running to see the difference for yourself.
+OHLCV_SYMBOLS = ["ZT.v.0", "ZF.v.0", "ZN.v.0", "TN.v.0", "ZB.v.0"]
 
 # Parent symbols for statistics (open interest across all expirations)
 STATS_SYMBOLS = ["ZT.FUT", "ZF.FUT", "ZN.FUT", "TN.FUT", "ZB.FUT"]
@@ -127,17 +139,36 @@ print(f"  Raw records: {len(df_stats)}")
 df_oi = df_stats[df_stats["stat_type"] == 9].copy()
 print(f"  Open interest records (stat_type=9): {len(df_oi)}")
 
+# Drop calendar spreads (e.g. "ZNH5-ZNM5") — we want outright contracts only.
+df_oi = df_oi[~df_oi["symbol"].str.contains("-")]
+
+# ── Deduplicate before aggregating ───────────────────────────────
+# CME publishes open interest for a given trade date TWICE: a preliminary
+# figure shortly after the close, then a final figure the next morning. Both
+# arrive as separate records with update_action=1, but they carry the SAME
+# ts_ref (the trade date the statistic describes).
+#
+# Summing them naively double-counts open interest — the 10-Year would show
+# ~9.1M contracts when the true figure is ~4.5M.
+#
+# The fix: group by (contract, ts_ref) and keep the record that arrived last,
+# which is the final revision.
+df_oi = df_oi.sort_index()  # ts_recv ascending
+df_oi = df_oi.groupby(["symbol", "ts_ref"], as_index=False).last()
+
+# The statistic describes ts_ref (the trade date), not when we received it.
+df_oi["date"] = pd.to_datetime(df_oi["ts_ref"]).dt.normalize().dt.tz_localize(None)
+
 # Extract product root from symbol (e.g., "ZNH5" -> "ZN")
 df_oi["product"] = df_oi["symbol"].str.extract(r"^([A-Z]{2})")
 
-# Aggregate OI across expirations per product per day
+# Aggregate OI across expirations per product per trade date
 df_oi_agg = (
-    df_oi.groupby([df_oi.index.date, "product"])["quantity"]
+    df_oi.groupby(["date", "product"])["quantity"]
     .sum()
     .reset_index()
 )
 df_oi_agg.columns = ["date", "product", "open_interest"]
-df_oi_agg["date"] = pd.to_datetime(df_oi_agg["date"])
 
 oi_path = OUTPUT_DIR / "open_interest.parquet"
 df_oi_agg.to_parquet(oi_path, index=False)

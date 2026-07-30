@@ -110,7 +110,7 @@ plt.close(fig)
 print("Saved: chart_volume_oi.png")
 
 # ── Chart 4: Rolling Volatility ──────────────────────────────────
-returns = close.pct_change()
+returns = close.pct_change(fill_method=None)
 rolling_vol = returns.rolling(20).std() * np.sqrt(252) * 100
 
 fig, ax = plt.subplots(figsize=(12, 6))
