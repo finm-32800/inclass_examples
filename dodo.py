@@ -11,6 +11,12 @@ that gets committed). Each task converts the ``.py`` source to ``.ipynb``,
 executes it, writes an HTML copy to ``_output/``, and moves the executed
 notebook to ``_output/_notebook_build/``.
 
+Tasks flagged ``keep_executed`` additionally leave the executed ``.ipynb``
+next to its ``.py`` source so it can be committed. The textbook copies that
+committed notebook directly instead of executing anything at book-build time
+(see ``../textbook/dodo.py``); refresh it by re-running the task here and
+committing the result.
+
 Paths are anchored to this file's location so the tasks behave the same whether
 you run ``doit`` from this directory or the textbook invokes them with
 ``doit -f ../inclass_examples/dodo.py``.
@@ -46,6 +52,16 @@ def mv(from_path, to_path):
     return _mv
 
 
+def cp(from_path, to_path):
+    """Copy a file into a folder, creating the folder if needed (portable)."""
+
+    def _cp():
+        to_path.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(str(from_path), str(to_path / from_path.name))
+
+    return _cp
+
+
 # Notebooks pulled by the textbook build. Keys are the notebook stems; each
 # ``path`` points at the jupytext percent-format .py source. ``file_dep`` lists
 # anything besides the source that should trigger a re-run.
@@ -54,6 +70,14 @@ notebook_tasks = {
         "path": HERE / "wrds" / "01_wrds_python_package_ipynb.py",
         "file_dep": [HERE / "wrds" / "settings.py"],
         "targets": [],
+    },
+    "01_databento_ipynb": {
+        "path": HERE / "databento" / "01_databento_ipynb.py",
+        "file_dep": [HERE / "databento" / "settings.py"],
+        "targets": [],
+        # The executed notebook is committed and copied by the textbook build
+        # (which never executes it); see the module docstring.
+        "keep_executed": True,
     },
 }
 
@@ -68,18 +92,21 @@ def task_run_notebooks():
     for notebook, spec in notebook_tasks.items():
         pyfile_path = spec["path"]
         notebook_path = pyfile_path.with_suffix(".ipynb")
+        keep_executed = spec.get("keep_executed", False)
+        publish = cp if keep_executed else mv
         yield {
             "name": notebook,
             "actions": [
                 f'jupytext --to notebook --output "{notebook_path}" "{pyfile_path}"',
                 jupyter_execute_notebook(notebook_path),
                 jupyter_to_html(notebook_path),
-                mv(notebook_path, NOTEBOOK_BUILD_DIR),
+                publish(notebook_path, NOTEBOOK_BUILD_DIR),
             ],
             "file_dep": [pyfile_path, *spec["file_dep"]],
             "targets": [
                 OUTPUT_DIR / f"{notebook}.html",
                 NOTEBOOK_BUILD_DIR / f"{notebook}.ipynb",
+                *([notebook_path] if keep_executed else []),
                 *spec["targets"],
             ],
             "clean": True,

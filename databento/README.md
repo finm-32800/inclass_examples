@@ -4,6 +4,14 @@ This directory teaches how to pull market data from [Databento](https://databent
 
 The Historical client is shown both ways — through the SDK and through the underlying HTTP API — so you can see what the SDK abstracts away. Databento also has a Live client for real-time streaming, but our subscription does not license it; see [No live-data license](#no-live-data-license) below.
 
+All four examples are also merged into a single notebook,
+[`01_databento_ipynb.py`](01_databento_ipynb.py) (jupytext percent format).
+The repo-root `dodo.py` converts and executes it (`doit
+run_notebooks:01_databento_ipynb`), and the executed
+`01_databento_ipynb.ipynb` is committed so the course textbook can embed it
+without re-running any queries. If you change the notebook source, re-run the
+doit task and commit the refreshed `.ipynb` alongside it.
+
 ## Cost Warning
 
 Databento charges per query. Every script in this directory uses `limit=10` to keep costs negligible. The SDK examples call `metadata.get_cost` (free) before fetching data and skip the download if the cost is non-zero, so you never spend money by accident.
