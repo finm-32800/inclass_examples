@@ -2,7 +2,7 @@
 #
 # Fetch ES trades from Databento using curl (raw HTTP REST API).
 #
-# This does the same thing as 01_historical_sdk/02_get_trades.py,
+# This does the same thing as 01_historical_sdk/01_get_trades.py,
 # but using curl instead of the Python SDK.
 #
 # Usage:

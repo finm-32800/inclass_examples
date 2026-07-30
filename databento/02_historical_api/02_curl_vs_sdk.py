@@ -53,10 +53,16 @@ response.raise_for_status()
 lines = response.text.strip().split("\n")
 for line in lines:
     record = json.loads(line)
-    # Raw prices are fixed-point integers — multiply by 1e-9
-    raw_price = record.get("price", 0)
-    actual_price = raw_price * 1e-9
-    print(f"  ts={record.get('ts_event')}  price={raw_price} (raw) -> ${actual_price:.2f}")
+    # Two gotchas in the raw JSON that the SDK hides from you:
+    #
+    # 1. 64-bit integers are encoded as STRINGS ("5587750000000"), because JSON
+    #    numbers are doubles and would lose precision. Cast with int() first.
+    # 2. ts_event lives in the record header ("hd"), not at the top level.
+    #    Only ts_recv is top-level.
+    raw_price = int(record["price"])
+    actual_price = raw_price * 1e-9  # fixed-point -> dollars
+    ts_event = record["hd"]["ts_event"]
+    print(f"  ts={ts_event}  price={raw_price} (raw) -> ${actual_price:.2f}")
 
 # ── Method 2: SDK (what you'll normally use) ─────────────────────
 print()
