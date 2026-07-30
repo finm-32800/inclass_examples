@@ -1,8 +1,8 @@
 # Databento: SDK vs API
 
-This directory teaches how to pull market data from [Databento](https://databento.com/) while illustrating the difference between using a **Python SDK** and making **raw API calls** (HTTP/curl or TCP).
+This directory teaches how to pull market data from [Databento](https://databento.com/) while illustrating the difference between using a **Python SDK** and making **raw API calls** (HTTP/curl).
 
-Each of Databento's two client types — Historical and Live — is shown both ways so you can see what the SDK abstracts away.
+The Historical client is shown both ways — through the SDK and through the underlying HTTP API — so you can see what the SDK abstracts away. Databento also has a Live client for real-time streaming, but our subscription does not license it; see [No live-data license](#no-live-data-license) below.
 
 ## Cost Warning
 
@@ -36,19 +36,49 @@ All examples use **GLBX.MDP3** (CME Globex), which covers E-mini S&P 500 futures
 |-----------|-------|----------|
 | `01_historical_sdk` | Fetch historical trades via Python SDK | SDK |
 | `02_historical_api` | Same query via curl and HTTP requests | HTTP REST |
-| `03_live_sdk` | Stream live trades via Python SDK | SDK |
-| `04_live_raw_tcp` | Same stream via raw TCP socket | TCP |
-| `05_schemas_and_symbology` | Data schemas and symbol types | SDK |
-| `06_treasury_futures_brief` | Treasury futures market brief (charts + table) | SDK |
+| `03_schemas_and_symbology` | Data schemas and symbol types | SDK |
+| `04_treasury_futures_brief` | Treasury futures market brief (charts + table) | SDK |
 
-Work through them in order. Each pair (01+02, 03+04) shows the SDK first, then the raw protocol underneath.
+Work through them in order. The first pair (01+02) runs the same query two ways — SDK first, then the raw HTTP protocol underneath — so you can see exactly what the SDK abstracts away.
+
+## No live-data license
+
+Databento has two modes of access, and **we only have the historical one**:
+
+- **Historical** (`db.Historical()`) — archived data, billed per query. This is
+  what every example here uses, and it all works.
+- **Live** (`db.Live()`) — real-time streaming over a persistent TCP
+  connection, billed per subscription. **Our subscription does not include
+  this.**
+
+An API key with historical access only will authenticate against the live
+gateway and then be rejected:
+
+```
+BentoError: A live data license is required to access GLBX.MDP3.
+```
+
+That message is about entitlement, not a bad key — the same key keeps working
+for every historical example here. Because we cannot run them, the two live
+streaming examples that used to live in this directory (`03_live_sdk` and
+`04_live_raw_tcp`, covering `db.Live()` and the raw CRAM/TCP wire protocol)
+have been removed. They are still in git history if a live license is ever
+added — find the commit that deleted them, then restore from its parent:
+
+```bash
+# 1. Find the deletion commit
+git log --diff-filter=D --oneline -- databento/03_live_sdk databento/04_live_raw_tcp
+
+# 2. Restore both modules from the commit just before it
+git checkout <commit>^ -- databento/03_live_sdk databento/04_live_raw_tcp
+```
 
 ## SDK vs API — What's the Difference?
 
-| | SDK (`databento` package) | Raw API (curl / TCP) |
+| | SDK (`databento` package) | Raw API (curl) |
 |---|---|---|
-| **Auth** | Pass key to constructor or set env var | HTTP Basic Auth or CRAM challenge |
+| **Auth** | Pass key to constructor or set env var | HTTP Basic Auth |
 | **Data format** | Auto-decoded to DataFrames | Raw JSON or binary DBN |
-| **Streaming** | Iterator / callback | Persistent TCP socket |
 | **Price scaling** | Automatic (human-readable floats) | Raw fixed-point integers (multiply by 1e-9) |
-| **Error handling** | Python exceptions | HTTP status codes / socket errors |
+| **Integer encoding** | Native Python `int` | JSON encodes 64-bit ints as *strings* |
+| **Error handling** | Python exceptions | HTTP status codes |
