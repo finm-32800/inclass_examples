@@ -1,4 +1,4 @@
-# 06 Schemas and Symbology
+# 03 Schemas and Symbology
 
 A conceptual capstone tying together the data model concepts from earlier examples: how Databento organizes data (schemas) and identifies instruments (symbology).
 

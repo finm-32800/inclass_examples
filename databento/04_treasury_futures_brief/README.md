@@ -1,4 +1,4 @@
-# 07 Treasury Futures Market Brief
+# 04 Treasury Futures Market Brief
 
 Build a market brief for Treasury futures across the yield curve. Combines two Databento queries (daily OHLCV + open interest statistics) into 4 charts and a summary table.
 
