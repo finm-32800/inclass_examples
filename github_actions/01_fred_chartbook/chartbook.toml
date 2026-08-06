@@ -1,0 +1,33 @@
+# Chartbook manifest (current format, chartbook >= 0.1.1).
+#
+# Note: this format differs from the legacy one you may see in
+# `pydoit/04_jupytext_notebooks/chartbook.toml` (which has a `[config]` table
+# and `chartbook_format_version = "0.0.2"`). In the current format every
+# `[project]` key is optional and an empty file is a valid manifest.
+
+[project]
+name = "FRED Chartbook: US GDP"
+description = "Minimal chartbook rebuilt daily by GitHub Actions"
+maintainer = "Jeremy Bejarano"
+
+[dataframes.fred]
+name = "FRED GDP"
+description = "US Gross Domestic Product pulled from FRED via pandas-datareader."
+sources = ["FRED"]
+providers = ["Federal Reserve Bank of St. Louis"]
+provider_links = ["https://fred.stlouisfed.org/"]
+pull_method = "Web API via Python"
+tags = ["Macroeconomic", "GDP"]
+path = "./_data/fred.parquet"
+date_col = "date"
+docs_path = "./docs_src/dataframes/fred.md"
+
+[charts.gdp]
+name = "US GDP Over Time"
+description = "Interactive line chart of US GDP, refreshed daily."
+dataframe = "fred"
+tags = ["Macroeconomic", "GDP"]
+frequency = "Quarterly"
+units = "Billions of Dollars"
+path = "./_output/gdp_chart.html"
+docs_path = "./docs_src/charts/gdp.md"

@@ -1,0 +1,6 @@
+databento
+doit
+pandas
+plotly
+pyarrow
+python-dotenv

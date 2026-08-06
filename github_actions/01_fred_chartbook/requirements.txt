@@ -1,0 +1,9 @@
+chartbook>=0.1.1
+colorama
+doit
+ipython
+pandas
+pandas-datareader
+plotly
+pyarrow
+python-decouple

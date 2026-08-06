@@ -10,6 +10,7 @@ These examples are designed to illustrate specific concepts during lectures with
 |-----------|-------------|
 | [databento/](databento/) | Databento market data: SDK vs raw API (HTTP and TCP) |
 | [env_vars/](env_vars/) | Environment variables and configuration examples |
+| [github_actions/](github_actions/) | Scheduled GitHub Actions: daily data pipelines, secrets, and gh-pages deployment |
 | [latex/](latex/) | Progressive LaTeX examples from minimal to full articles and slides |
 | [project_paths/](project_paths/) | Approaches for project-root-anchored paths |
 | [polars/](polars/) | Polars vs pandas: syntax, LazyFrames, streaming, Hive partitioning |
