@@ -1,0 +1,4 @@
+Name,Metadata Complete,Object Type,Identifier,Pipeline,Missing Fields,Page Link
+FRED Chartbook: US GDP,False,pipeline,finm-32900/01_fred_chartbook,finm-32900/01_fred_chartbook,"contributors, build, os_compatibility, repo_url",../index.html
+FRED GDP,True,dataframe,fred,finm-32900/01_fred_chartbook,,./dataframes/finm-32900--01_fred_chartbook/fred.html
+US GDP Over Time,False,chart,gdp,finm-32900/01_fred_chartbook,"observation_period, release_lag, release_timing",./charts/finm-32900--01_fred_chartbook.gdp.html

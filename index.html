@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FINM 32900 — GitHub Actions Examples</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 42rem;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    color: #0b0b0b;
+    background: #fcfcfb;
+    line-height: 1.6;
+  }
+  h1 { font-size: 1.6rem; }
+  a { color: #1c5cab; }
+  ul { padding-left: 1.2rem; }
+  li { margin: 0.6rem 0; }
+  .note { color: #52514e; font-size: 0.9rem; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<h1>FINM 32900 — GitHub Actions Examples</h1>
+<p>
+  This site is rebuilt every day at 10:00 UTC by a scheduled
+  <a href="https://github.com/finm-32900/inclass_examples/blob/main/.github/workflows/deploy_examples_site.yml">GitHub
+  Actions workflow</a> that pulls fresh data, regenerates every page, and
+  force-pushes the result to the <code>gh-pages</code> branch — which always
+  contains exactly one commit.
+</p>
+<ul>
+  <li><a href="01_fred/">FRED GDP Chartbook</a> — a pydoit + chartbook
+      pipeline pulling GDP from FRED (no API key needed)</li>
+  <li><a href="02_databento/">Treasury Futures Latest Prices</a> — a minimal
+      Databento pull whose API key lives in a GitHub Actions secret</li>
+</ul>
+<p class="note">
+  Source: <a href="https://github.com/finm-32900/inclass_examples/tree/main/github_actions">finm-32900/inclass_examples/github_actions</a>
+</p>
+</body>
+</html>
