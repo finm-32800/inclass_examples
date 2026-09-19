@@ -4,7 +4,7 @@ These examples show how a GitHub Actions workflow can run a `doit` pipeline on
 a daily schedule, pull fresh data, and publish the regenerated HTML to GitHub
 Pages — a self-updating dashboard with no server to maintain.
 
-**Live site:** https://finm-32900.github.io/inclass_examples/
+**Live site:** https://finm-32800.github.io/inclass_examples/
 
 The two subexamples are built and deployed together by a single workflow:
 [.github/workflows/deploy_examples_site.yml](../.github/workflows/deploy_examples_site.yml).

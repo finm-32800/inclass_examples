@@ -142,4 +142,4 @@ If nothing has changed, tasks are skipped (up-to-date).
 - [PyDoit Documentation](https://pydoit.org/contents.html)
 - [Jupytext](https://jupytext.readthedocs.io/)
 - [FRED API](https://fred.stlouisfed.org/)
-- [Textbook: What is a Task Runner?](../../textbook/docs/Week3/what_is_a_task_runner.html)
+- [Textbook: What is a Task Runner?](../../finm32800_textbook/docs/Week3/what_is_a_task_runner.html)

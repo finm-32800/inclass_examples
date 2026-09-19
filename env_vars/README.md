@@ -2,7 +2,7 @@
 
 This directory contains progressive examples teaching environment variables in Python.
 
-**Course materials**: https://finm-32900.github.io/Week2/env_files.html
+**Course materials**: https://finm-32800.github.io/Week2/env_files.html
 
 ## Examples
 

@@ -1,6 +1,6 @@
 # In-Class Examples
 
-This directory contains small, self-contained examples used for in-class demonstrations in [FINM 32900: Full Stack Quantitative Finance](https://finm-32900.github.io/).
+This directory contains small, self-contained examples used for in-class demonstrations in [FINM 32800: Data Pipelines for Quantitative Research](https://finm-32800.github.io/).
 
 These examples are designed to illustrate specific concepts during lectures without requiring their own dedicated repositories.
 
@@ -25,7 +25,7 @@ These examples are designed to illustrate specific concepts during lectures with
 into it and follow its README. They do not depend on the master `dodo.py`.
 
 **A few notebooks are wired into the master [`dodo.py`](dodo.py)** because the
-course textbook (`finm-32900/textbook`) pulls their executed versions at build
+course textbook (`finm-32800/finm32800_textbook`) pulls their executed versions at build
 time. Those notebooks are authored as jupytext percent-format `.py` files
 (e.g. [`wrds/01_wrds_python_package_ipynb.py`](wrds/01_wrds_python_package_ipynb.py));
 the committed `.py` file is the source of truth, and executed `.ipynb`/HTML
@@ -47,11 +47,11 @@ The WRDS notebook needs WRDS credentials to execute: copy `.env.example` to
 
 ## Course Overview
 
-FINM 32900 is a hands-on course centered on key data science tools in quantitative finance. It covers:
+FINM 32800 is a hands-on course centered on key data science tools in quantitative finance. It covers:
 
 - **Data sources**: CRSP, Compustat, FRED, Bloomberg, and more
 - **Development practices**: Git, virtual environments, task runners, testing
 - **Analytics pipeline**: Data extraction, cleaning, analysis, visualization, reporting
 - **Deployment**: GitHub Actions, interactive dashboards
 
-See the [course website](https://finm-32900.github.io/) for more details.
+See the [course website](https://finm-32800.github.io/) for more details.

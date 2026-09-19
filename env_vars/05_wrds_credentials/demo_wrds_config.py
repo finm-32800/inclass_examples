@@ -17,4 +17,4 @@ print(f"WRDS_USERNAME = {wrds_username}")
 # db = wrds.Connection(wrds_username=wrds_username)
 #
 # The password is stored in ~/.pgpass (not in .env)
-# See: https://finm-32900.github.io/notebooks/_01_wrds_python_package.html
+# See: https://finm-32800.github.io/notebooks/_01_wrds_python_package.html

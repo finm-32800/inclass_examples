@@ -19,7 +19,7 @@
 # [Databento](https://databento.com/) while illustrating the difference between
 # using a **Python SDK** and making **raw API calls** (HTTP). It merges the
 # standalone exercises in the
-# [`databento/`](https://github.com/finm-32900/inclass_examples/tree/main/databento)
+# [`databento/`](https://github.com/finm-32800/inclass_examples/tree/main/databento)
 # directory of the in-class examples repo into a single walkthrough:
 #
 # 1. **Historical SDK basics** — the simplest fetch: check cost, pull trades,
@@ -757,13 +757,13 @@ df_table
 #
 # The standalone versions of these examples (runnable scripts with their own
 # READMEs, including the pure-`curl` version of Section 2) live in the
-# [`databento/`](https://github.com/finm-32900/inclass_examples/tree/main/databento)
+# [`databento/`](https://github.com/finm-32800/inclass_examples/tree/main/databento)
 # directory of the in-class examples repo:
 #
-# - [`01_historical_sdk`](https://github.com/finm-32900/inclass_examples/tree/main/databento/01_historical_sdk)
-# - [`02_historical_api`](https://github.com/finm-32900/inclass_examples/tree/main/databento/02_historical_api)
-# - [`03_schemas_and_symbology`](https://github.com/finm-32900/inclass_examples/tree/main/databento/03_schemas_and_symbology)
-# - [`04_treasury_futures_brief`](https://github.com/finm-32900/inclass_examples/tree/main/databento/04_treasury_futures_brief)
+# - [`01_historical_sdk`](https://github.com/finm-32800/inclass_examples/tree/main/databento/01_historical_sdk)
+# - [`02_historical_api`](https://github.com/finm-32800/inclass_examples/tree/main/databento/02_historical_api)
+# - [`03_schemas_and_symbology`](https://github.com/finm-32800/inclass_examples/tree/main/databento/03_schemas_and_symbology)
+# - [`04_treasury_futures_brief`](https://github.com/finm-32800/inclass_examples/tree/main/databento/04_treasury_futures_brief)
 #
 # Exercises to try:
 #

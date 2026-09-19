@@ -30,5 +30,5 @@ python demo_wrds_config.py
 
 ## Course materials
 
-- https://finm-32900.github.io/Week2/env_files.html
-- https://finm-32900.github.io/notebooks/_01_wrds_python_package.html
+- https://finm-32800.github.io/Week2/env_files.html
+- https://finm-32800.github.io/notebooks/_01_wrds_python_package.html

@@ -1,7 +1,7 @@
 """Master task runner for the in-class examples repo.
 
 This intentionally wires up *only* the notebooks that the course textbook pulls
-in at build time (see ``../textbook/dodo.py``). Most examples in this repo are
+in at build time (see ``../finm32800_textbook/dodo.py``). Most examples in this repo are
 standalone and are run directly from their own directories; as more material is
 referenced by the textbook, add the corresponding entries to ``notebook_tasks``
 below.
@@ -14,7 +14,7 @@ notebook to ``_output/_notebook_build/``.
 Tasks flagged ``keep_executed`` additionally leave the executed ``.ipynb``
 next to its ``.py`` source so it can be committed. The textbook copies that
 committed notebook directly instead of executing anything at book-build time
-(see ``../textbook/dodo.py``); refresh it by re-running the task here and
+(see ``../finm32800_textbook/dodo.py``); refresh it by re-running the task here and
 committing the result.
 
 Paths are anchored to this file's location so the tasks behave the same whether
