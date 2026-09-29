@@ -1,0 +1,4 @@
+nasdaq-data-link
+requests
+pandas
+python-decouple

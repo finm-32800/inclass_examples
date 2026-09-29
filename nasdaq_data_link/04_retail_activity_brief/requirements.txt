@@ -1,0 +1,4 @@
+nasdaq-data-link
+pandas
+matplotlib
+python-decouple

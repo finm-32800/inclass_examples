@@ -1,0 +1,53 @@
+table,description,name,premium,vendor_refreshed,date_column,entity_column,status,rows_first_page,more_pages,entities_first_page,min_date_p1,max_date_p1,canary_rows,recent_rows,verdict
+NDAQ/RTAT10,"Retail Trading Activity Tracker, daily top 10 (free)",Retail Trading Activity Tracker - Daily Top 10 (Free),False,2026-09-22,date,date,200,10000.0,True,1000.0,2022-09-26,2026-09-21,True,True,current
+QDL/BCHAIN,Bitcoin blockchain statistics,Bitcoin data insights,False,2026-06-23,date,code,200,10000.0,True,3.0,2009-01-02,2026-06-23,,True,current
+QDL/BITFINEX,Bitfinex crypto prices,Bitfinex Crypto Coins Exchange Rate,False,2026-06-22,date,code,200,10000.0,True,12.0,2018-07-05,2026-03-04,,True,current
+QDL/FON,"CFTC commitments of traders, futures only",Futures and Options Metrics: Open Interest and Trader Count,False,2026-06-20,date,contract_code,200,10000.0,True,5.0,2010-01-05,2019-10-08,,True,current
+QDL/ODA,IMF World Economic Outlook,IMF Cross Country Macroeconomic Statistics,False,2023-10-31,date,indicator,200,10000.0,True,205.0,1980-12-31,2028-12-31,,True,current
+SHARADAR/TICKERS,Securities master (free),Tickers and Metadata,False,2026-09-22,lastupdated,table,200,10000.0,True,2.0,2018-06-13,2026-09-22,True,True,current
+ETFG/FUND,ETF Global fund flows and NAV,Fund Flows,True,2026-09-22,date,date,200,136.0,False,20.0,2023-01-03,2023-01-31,False,False,sample
+FXCM/H1,FXCM hourly FX rates,FXCM Currency Exchange Rates Hourly Data,True,2026-09-15,date,symbol,200,10000.0,True,4.0,2017-07-02,2017-12-29,,False,sample
+IFT/NSA,News sentiment,InfoTrie FintSentS Web News Sentiment,True,2022-11-14,date,ticker,200,856.0,False,2.0,2018-06-01,2018-12-31,False,False,sample
+MER/F1,Mergent global fundamentals,Mergent Global Fundamentals Data,True,2026-09-22,reportdate,compnumber,200,10000.0,True,25.0,2010-12-31,2015-12-31,False,False,sample
+NDAQ/RTAT,"Retail Trading Activity Tracker, full universe",Retail Trading Activity Tracker - Daily Full Universe (Premium),True,2026-09-22,date,date,200,7.0,False,1.0,2016-01-15,2016-01-15,True,False,sample
+ORATS/OPT,ORATS option volatility surfaces,ORATS Option Volatility Surfaces,True,2026-09-22,date,ticker,200,2611.0,False,3.0,2015-01-02,2018-12-31,False,False,sample
+ORATS/VOL,ORATS volatility metrics,ORATS Expanded Core Option Volatility Data,True,2026-09-22,tradedate,ticker,200,753.0,False,3.0,2018-01-02,2018-12-31,False,False,sample
+QUOTEMEDIA/DAILYPRICES,Latest-day prices,EOD Prices - Replaced Daily,True,2025-06-03,date,ticker,200,28.0,False,28.0,2025-05-29,2025-05-29,False,False,sample
+QUOTEMEDIA/PRICES,End-of-day US stock prices,EOD Prices,True,2025-06-03,date,ticker,200,1218.0,False,29.0,2017-09-01,2017-10-31,False,False,sample
+SHARADAR/ACTIONS,Corporate actions,Corporate Actions,True,2026-09-22,date,date,200,3284.0,False,2406.0,1997-12-31,2026-09-21,False,True,sample
+SHARADAR/DAILY,"Daily valuation metrics (EV, market cap, P/E)",Daily Metrics,True,2026-09-22,date,ticker,200,2296.0,False,28.0,2018-09-04,2018-12-31,False,False,sample
+SHARADAR/EVENTS,8-K event codes (free),Core US Fundamentals Events,False,2026-09-22,date,ticker,200,10000.0,True,19.0,1994-01-18,2026-09-16,False,True,sample
+SHARADAR/METRICS,"Beta, 52-week range, dividend yields",US Price Based Metrics,True,2026-09-22,date,ticker,200,25.0,False,25.0,2018-12-14,2026-09-21,False,True,sample
+SHARADAR/SEP,"Equity prices, daily",Sharadar Equity Prices,True,2026-09-22,date,ticker,200,2460.0,False,30.0,2018-09-04,2018-12-31,False,False,sample
+SHARADAR/SF1,Core US fundamentals,Core US Fundamentals,True,2026-09-22,datekey,ticker,200,60.0,False,30.0,2022-05-31,2024-01-31,False,False,sample
+SHARADAR/SF2,Insider transactions (Forms 3/4/5),Core US Insiders,True,2026-09-22,filingdate,ticker,200,2401.0,False,29.0,2018-09-04,2018-12-31,False,False,sample
+SHARADAR/SFP,"Fund (ETF) prices, daily",Sharadar Fund Prices,True,2026-09-22,date,ticker,200,2034.0,False,25.0,2018-09-04,2018-12-31,False,False,sample
+SHARADAR/SP500,"S&P 500 constituents, current and historical",S&P500 Current and Historical Constituents,True,2026-09-22,date,date,200,3139.0,False,132.0,1957-03-04,2026-09-21,False,True,sample
+ZACKS/CP,Company profiles,Zacks Company Profiles,True,2026-09-22,,m_ticker,200,29.0,False,29.0,,,False,,sample
+ZACKS/EA,Earnings announcement dates,Zacks Earnings Announcements,True,2026-09-22,exp_rpt_date_qr1,m_ticker,200,29.0,False,29.0,2026-10-01,2026-11-19,False,True,sample
+ZACKS/EE,Earnings estimates,Zacks Consensus Earnings Estimates,True,2026-09-22,per_end_date,m_ticker,200,455.0,False,29.0,2026-06-30,2031-06-30,False,True,sample
+ZACKS/ES,Earnings surprises,Zacks Consensus Earnings Surprises,True,2026-09-22,per_end_date,m_ticker,200,116.0,False,29.0,2018-01-31,2018-12-31,False,False,sample
+ZACKS/FC,Fundamentals condensed,Zacks Fundamentals Condensed,True,2026-09-22,per_end_date,m_ticker,200,145.0,False,29.0,2018-01-31,2018-12-31,False,False,sample
+ZACKS/FR,Fundamental ratios,Zacks Fundamental Ratios,True,2026-09-22,per_end_date,m_ticker,200,145.0,False,29.0,2018-01-31,2018-12-31,False,False,sample
+ZACKS/HDM,Dividend history,Zacks Historical Daily Maintenance,True,2026-09-21,proc_date,action_type,200,1.0,False,1.0,2018-02-01,2018-02-01,,False,sample
+ZACKS/MKTV,Market value,Zacks Market Value Supplement,True,2026-09-20,per_end_date,per_end_date,200,116.0,False,4.0,2018-03-31,2018-12-31,False,False,sample
+ZACKS/MT,Master table,Zacks Master Table,True,2026-09-22,mr_split_date,m_ticker,200,29.0,False,29.0,1997-06-09,2026-06-24,False,,sample
+ZACKS/SHRS,Shares outstanding,Zacks Shares Supplement,True,2026-09-20,per_end_date,per_end_date,200,116.0,False,12.0,2018-01-31,2018-12-31,False,False,sample
+ZACKS/SS,Sales surprises,Zacks Sales Surprises,True,2026-09-22,per_end_date,m_ticker,200,116.0,False,29.0,2018-01-31,2018-12-31,False,False,sample
+QDL/JODI,JODI oil statistics,JODI Oil World Database,False,2025-02-24,date,code,200,10000.0,True,1.0,2002-01-31,2024-12-31,,False,stale
+QDL/LME,London Metal Exchange warehouse stocks,Metal Stocks,False,2024-08-01,date,item_code,200,10000.0,True,2.0,2015-01-02,2024-07-30,,False,stale
+QDL/ML,BofA Merrill Lynch corporate bond yields and indices,Corporate Bond Yield Rates,False,2025-03-02,date,series_code,200,10000.0,True,2.0,1996-12-31,2025-02-27,,False,stale
+QDL/OPEC,OPEC reference basket oil price,Organization of the Petroleum Exporting Countries,False,2024-01-26,date,date,200,5435.0,False,5435.0,2003-01-02,2024-01-25,,False,stale
+SCF/PRICES,Stevens continuous futures (ended 2022-06),Continuous Futures,False,2022-06-30,date,quandl_code,200,10000.0,True,3.0,2005-01-03,2022-06-29,,False,stale
+WIKI/PRICES,Wiki EOD stock prices (ended 2018-03-27),Wiki Prices,,2018-03-27,date,ticker,200,10000.0,True,3.0,1994-01-04,2018-03-27,True,False,stale
+NDAQ/IPO,Nasdaq IPO announcements,IPO Quoting Period Update,False,2019-12-19,,tracking_id,200,1.0,False,1.0,,,,,unknown
+QUOTEMEDIA/TICKERS,Ticker list,EOD Tickers,False,2025-05-31,,ticker,200,10000.0,True,10000.0,,,True,,unknown
+SHARADAR/INDICATORS,Data dictionary for the Sharadar tables (free),Indicator Descriptions,False,2026-09-18,,table,200,384.0,False,17.0,,,,,unknown
+ZILLOW/DATA,Zillow home values and rents,Zillow Data,False,2025-07-20,date,indicator_id,200,10000.0,True,1.0,1996-01-31,2025-06-30,,,unknown
+ZILLOW/INDICATORS,Zillow indicator codes,Zillow Indicators,False,2025-07-20,,indicator_id,200,56.0,False,56.0,,,,,unknown
+ZILLOW/REGIONS,Zillow region codes,Zillow Regions,False,2025-07-20,,region_id,200,10000.0,True,10000.0,,,,,unknown
+EOD/PRICES,End of Day US Stock Prices,EOD Prices,True,2021-07-15,date,ticker,403,,,,,,,,forbidden
+EOD/TICKERS,"End of Day US Stock Prices, ticker list",EOD Tickers,True,2021-06-30,,ticker,403,,,,,,,,forbidden
+ETFG/CONST,ETF Global constituents,ETF Global Constituents,True,2026-09-22,etfg_date,etfg_date,403,,,,,,,,forbidden
+QDL/FRED,FRED mirror,FRED Data Series,True,2026-06-23,date,fred_id,403,,,,,,,,forbidden
+SHARADAR/SF3,Institutional holdings (13F),Core US Institutional Investors,True,2026-09-22,date,ticker,403,,,,,,,,forbidden
