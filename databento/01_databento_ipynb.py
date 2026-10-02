@@ -672,7 +672,7 @@ plt.show()
 #
 # Average daily volume (from the OHLCV query) next to the latest open
 # interest (from the statistics query) shows where activity concentrates on
-# the curve — the 10-Year dominates both measures.
+# the curve. The 10-Year leads on volume, but the 5-Year carries the most open interest.
 
 # %%
 avg_volume = volume.mean()
