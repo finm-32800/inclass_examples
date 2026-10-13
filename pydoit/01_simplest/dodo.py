@@ -13,7 +13,6 @@ To run:
     doit              # Run all tasks
     doit list         # List all tasks
     doit info <task>  # Show task details
-    doit clean        # Remove all target files
     doit forget       # Clear the dependency database
     doit -a          # Run all tasks and print the commands that are being executed
     doit process_data
@@ -34,10 +33,11 @@ Key concepts:
 def task_create_data():
     """Task: Create the initial data file."""
     return {
-        'actions': ['python create_data.py'],
+        'actions': [
+            'python create_data.py', 
+            ],
         'file_dep': ['create_data.py'],
         'targets': ['_output/data.txt'],
-        'clean': True,  # Allow 'doit clean' to remove targets
     }
 
 
@@ -50,7 +50,6 @@ def task_process_data():
             '_output/data.txt',  # Depends on output of task_create_data
         ],
         'targets': ['_output/processed.txt'],
-        'clean': True,
     }
 
 
@@ -63,5 +62,4 @@ def task_create_report():
             '_output/processed.txt',  # Depends on output of task_process_data
         ],
         'targets': ['_output/report.txt'],
-        'clean': True,
     }
