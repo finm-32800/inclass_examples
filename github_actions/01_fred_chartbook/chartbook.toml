@@ -1,9 +1,9 @@
 # Chartbook manifest (current format, chartbook >= 0.1.1).
 #
-# Note: this format differs from the legacy one you may see in
-# `pydoit/04_jupytext_notebooks/chartbook.toml` (which has a `[config]` table
-# and `chartbook_format_version = "0.0.2"`). In the current format every
-# `[project]` key is optional and an empty file is a valid manifest.
+# Note: older projects used a legacy format, with a `[config]` table and
+# `chartbook_format_version = "0.0.2"`, which chartbook no longer reads. In
+# the current format every `[project]` key is optional and an empty file is a
+# valid manifest.
 
 [project]
 name = "FRED Chartbook: US GDP"
