@@ -79,6 +79,20 @@ notebook_tasks = {
         # (which never executes it); see the module docstring.
         "keep_executed": True,
     },
+    "01_modules_and_packages_ipynb": {
+        "path": HERE / "python_imports" / "01_modules_and_packages_ipynb.py",
+        # The notebook prints and runs the example files, so an edit to any of
+        # them re-executes it.
+        "file_dep": [
+            *sorted((HERE / "python_imports").glob("0*/*.py")),
+            *sorted((HERE / "python_imports").glob("0*/*/*.py")),
+            HERE / "project_paths" / "install_approach" / "pyproject.toml",
+            HERE / "project_paths" / "install_approach" / "src" / "myproj" / "paths.py",
+        ],
+        "targets": [],
+        # Committed and copied by the textbook build, like the Databento one.
+        "keep_executed": True,
+    },
 }
 
 
