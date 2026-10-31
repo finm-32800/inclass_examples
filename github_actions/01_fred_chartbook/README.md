@@ -10,7 +10,7 @@ re-runs it every day and publishes the result to GitHub Pages.
 - How a `doit` pipeline (pull → chart → build site) becomes a scheduled job
   that refreshes a public site with no human in the loop
 - How chartbook turns a `chartbook.toml` manifest plus markdown stubs into a
-  full documentation website (`chartbook build -f` → `docs/`)
+  full documentation website (`chartbook docs build -f` → `docs/`)
 - Why this example needs **no API key**: FRED data via `pandas-datareader` is
   keyless, so the workflow runs with no secrets (contrast with
   [../02_databento_secret/](../02_databento_secret/))

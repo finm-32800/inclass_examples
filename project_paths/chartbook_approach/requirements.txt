@@ -1,1 +1,1 @@
-chartbook>=0.0.3
+chartbook>=0.4.0

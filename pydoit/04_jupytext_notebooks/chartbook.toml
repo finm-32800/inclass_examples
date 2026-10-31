@@ -10,7 +10,7 @@ os_compatibility = [
     "Linux",
     "macOS",
 ]
-build = "doit"
+requires_chartbook = ">=0.4.0"
 
 [notebooks.01_example_notebook_interactive]
 name = "GDP Over Time"
@@ -75,3 +75,6 @@ release_timing = "Monthly"
 units = "Percent"
 path = "./_output/02_unemployment_chart.html"
 docs_path = "./docs_src/charts/unemployment_chart.md"
+
+[scripts]
+build = "doit"

@@ -76,7 +76,7 @@ This is more robust than hardcoding parent levels because it adapts to your proj
 
 ```
 chartbook_approach/
-├── requirements.txt         # chartbook>=0.0.3
+├── requirements.txt         # chartbook>=0.4.0
 ├── dodo.py                  # Task runner (uses sys.path trick)
 ├── src/
 │   ├── settings.py          # Uses chartbook.env.get_project_root()

@@ -1,4 +1,4 @@
-# Chartbook manifest (current format, chartbook >= 0.1.1).
+# Chartbook manifest (current format, chartbook >= 0.4.0).
 #
 # Note: older projects used a legacy format, with a `[config]` table and
 # `chartbook_format_version = "0.0.2"`, which chartbook no longer reads. In
@@ -9,6 +9,7 @@
 name = "FRED Chartbook: US GDP"
 description = "Minimal chartbook rebuilt daily by GitHub Actions"
 maintainer = "Jeremy Bejarano"
+requires_chartbook = ">=0.4.0"
 
 [dataframes.fred]
 name = "FRED GDP"
@@ -31,3 +32,6 @@ frequency = "Quarterly"
 units = "Billions of Dollars"
 path = "./_output/gdp_chart.html"
 docs_path = "./docs_src/charts/gdp.md"
+
+[scripts]
+build = "doit"

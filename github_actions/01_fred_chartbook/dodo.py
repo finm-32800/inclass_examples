@@ -105,7 +105,7 @@ def task_chart_gdp():
 def task_build_site():
     """Build the chartbook HTML site into ./docs"""
     return {
-        "actions": ["chartbook build -f"],
+        "actions": ["chartbook docs build -f"],
         "targets": ["./docs/index.html"],
         "file_dep": [
             "./chartbook.toml",

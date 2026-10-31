@@ -1,4 +1,4 @@
-chartbook>=0.1.1
+chartbook>=0.4.0
 colorama
 doit
 ipython
